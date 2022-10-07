@@ -8,14 +8,15 @@ function crearUsuario() {
   // {{nombre}} debe ser el nombre definido en cada instancia
   // Devuelve la clase
   // Tu código:
-function Usuario(opciones) {
-  this.usuario = opciones.usuario;
-  this.nombre = opciones.nombre;
+
+function Usuario(opciones) {          //creamos una funcion constructor llamada "Usuario" y opciones es el objeto
+  this.usuario = opciones.usuario;    //en el constructor definimos el usuario, nombre,....etc
+  this.nombre = opciones.nombre;       //lo que hay en opciones pero el usuario, luego lo que esta en opciones nombre..
   this.email = opciones.email;
   this.password = opciones.password;
 }
-Usuario.prototype.saludar = function (){
-  return `Hola, mi nombre es ${this.nombre}`;
+Usuario.prototype.saludar = function (){    //metodo "saludar" en su prototype
+  return `Hola, mi nombre es ${this.nombre}`;  //tener en cuenta las ` ` y el $
 }
 return Usuario;
 }
