@@ -183,6 +183,7 @@ function agregarMetodoCalculoDescuento (producto) {
   // Tu código:
 
 // agragar un metodo --> como agregamos una propiedad pero la igualamos a function ()
+
 producto.calcularPrecioDescuento = function(){
   return producto.precio - (producto.precio * producto.porcentajeDeDescuento); // podemos usar this (hace referenca al objeto)
 }        //this.precio       this.precio        this.porcentajeDeDescueno                                      
