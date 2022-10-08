@@ -44,15 +44,16 @@ function agregarStringInvertida() {
 
   // HOLA
   // [H, O, L, A]---> arrancamos desde la A
-  //           i
+  // palabraInvertida = ALO...          i
 
-  for (var i = this.length; i != 0; i --){ 
-  palabraInvertida = palabraInvertida + this.charAt(i-1);     //que hace el charAt
+  for (var i = this.length - 1; i >= 0; i --){ 
+  palabraInvertida = palabraInvertida + this.charAt(i);     //que hace el charAt: permite dividir la palabra
+}                                     //toma el caracter y lo agrega      //charAt: str.chartAt(indice)      
+return palabraInvertida;                                       // forma de extraer un caracter de un string
 }
-return palabraInvertida;
 }
-}
-
+//                                                              let string = "holaquehaces?"
+//                                                              console.log(string[5])
 // ---------------------------------------------------------------------------//
   //Crea el constructor de la clase "Persona"
   //Debe tener las propiedades: "nombre", "apellido", "edad" y "domicilio"
@@ -91,11 +92,16 @@ const persona = new Persona (nombre, apellido, edad, dir)
 return persona;
 
 }
-//expect(crearInstanciaPersona("Juan", "Pérez", 22, "Saavedra 123"))
+//(crearInstanciaPersona("Juan", "Pérez", 22, "Saavedra 123"))
   
 function agregarMetodo() {
   //La función agrega un método "datos" a la clase Persona que toma el nombre y la edad de la persona y devuelve: 
   //Ej: "Juan, 22 años"
+Persona.prototype.datos = function(){
+ // return this.nombre + ", " + this.edad + " años";
+ return `${this.nombre}, ${this.edad} años`
+};
+
 }
   
 
