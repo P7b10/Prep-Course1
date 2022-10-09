@@ -7,8 +7,13 @@ function mayuscula(nombre) {
   // "M A R I O"
   //  0 1  2 3 4 ---> chartAt(6) ---> "I"
   return nombre.charAt(0).toUpperCase() + nombre.slice(1) //slice le paso desde donde quiero iniciar
-}
+  }
+
 //console.log(mayuscula("mario")) View.--command pannel..hacer correr quokka
+
+/*var nuevoNombre = nombre[0].toUpperCase() + nombre.substring(1)
+  //                     M                    + ario(el 1 indicaria que arranca desde la posicion 1 hasta el final)
+   return nuevoNombre;  */
 
 function invocarCallback(cb) {
   // Invoca al callback `cb`
@@ -32,36 +37,52 @@ function sumarArray(numeros, cb) {
   //Tu código:
   // numero = [1, 2, 3, 4, 5] --> 15
 
-//var suma = 0;
-//for (var i = 0; i<numeros.length; i++){
-//  suma = suma + numeros[i];
-//}
-//cb(suma);
- 
+var suma = 0;                               
+for (var i = 0; i<numeros.length; i++){
+  suma = suma + numeros[i];
+}
+cb(suma);                        //pasamos el resulrado suma a cb
+  }
+
 //let suma = 0 
 // numeros.forEach((element)=>{    //forEach hace lo mismo que el bucle for (podemos poner e, element, lo que sea)
 //  suma = suma + element;          // numeros = [1, 2, 3, 4, 5] => 15 numeros [i] === element
 // })
 //cb(suma) 
+// }
 
-var sumaTotal = numeros.reduce(
-  function(acumulador, actual){
-    return acumulador + actual;
+//REDUCE: hace lo mismo que el ciclo FOR
+/*var sumaTotal = numeros.reduce(function(a, b){      a: valor precio
+    return a + b;                                     b: valor siguiente
   }
-,0);
+,0);                                                  0: que arranque en 0 
 cb(sumaTotal);
 
 }
-
+*/
 function forEach(array, cb) {
   // Itera sobre la matriz "array" y pasa los valores al callback uno por uno
   // Pista: Estarás invocando a `cb` varias veces (una por cada valor en la matriz)
   //Tu código:
 
-array.forEach((e)=>{    //volver a ver el video para ver la opcion bucle for
-  cb(e)
+//array ---> [1, 2, 3, 4]
+//             e          en la primer vuelta
+//                e       en la segunda vuelta
+//cb es un funcion que algo va a ir haciendo con los elementos que le va llegando
+// ej: cb --> funcion suma(s)
+//                     s + 1
+//en la primer posicion 1 + 1  
+array.forEach((e)=>{    //e va tomando los elementos del array
+  cb(e)                   
 })  
 }
+/*
+for (var i = 0: i < array.length; i++){
+  cb(array[i])
+}
+ }
+*/
+
 
 function map(array, cb) {
   // Crea un nuevo array
@@ -79,7 +100,7 @@ function map(array, cb) {
  return nuevoArreglo;
 
  // var nuevoArreglo = array.map(function(i){    //en lugar de i podria ir element
- // return cb(i);
+ // return cb(i);                                //en este caso si es necesario ---> return <--
  ///});
  //return nuevoArreglo;
 
@@ -106,7 +127,7 @@ if (array[i] [0] == "a"){
 // git push
 
 //return array.filter(function (elements){
-//  return elements[0] == "a";
+//  return elements[0] == "a";              //return elements.charAt(0) === "a"
 //});
 // }
 // No modificar nada debajo de esta línea
